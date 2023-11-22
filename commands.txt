@@ -1,0 +1,1 @@
+npx sequelize model:create --name Song --attributes title:string,lyric:text,like:integer,videoUrl:text,genre:varchar

@@ -1,0 +1,16 @@
+[
+    {
+        "profilePicture": "https://images.unsplash.com/photo-1480429370139-e0132c086e2a?q=80&w=2188&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "username": "john_doe",
+        "password": "hashed_password_1",  
+        "email": "john.doe@example.com",
+        "role": "user"
+    },
+    {
+        "profilePicture": "https://plus.unsplash.com/premium_photo-1689266188052-704d33673e69?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "username": "jane_smith",
+        "password": "hashed_password_2", 
+        "email": "jane.smith@example.com",
+        "role": "admin"
+    }
+]

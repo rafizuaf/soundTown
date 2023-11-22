@@ -1,5 +1,5 @@
 'use strict';
-const {hashPassword} = require('./helper/bcrypt')
+const {hashPassword} = require('../helper/bcrypt')
 const {
   Model
 } = require('sequelize');
@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       User.belongsTo(models.Artist)
     }
+
+    
   }
   User.init({
     username: DataTypes.STRING,

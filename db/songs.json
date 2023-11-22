@@ -19,6 +19,13 @@
       "like": 3000,
       "videoUrl": "https://www.youtube.com/watch?v=CvFH_6DNRCY",
       "genre": "Jazz"
+    },
+    {
+      "title": "Mary on a cross",
+      "lyric": "lirik lagu dari band seram",
+      "like": 6000,
+      "videoUrl": "https://www.youtube.com/watch?v=NmxFxBiCrL4",
+      "genre": "Jazz"
     }
 ]
   

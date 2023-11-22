@@ -1,12 +1,8 @@
 const express = require('express')
+const { Controller } = require('../controllers/controller')
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('Soundtown Homepage')
-})
-// define the about route
-router.get('/about', (req, res) => {
-    res.send('About birds')
-})
+router.get('/navbar', Controller.navbar)
+router.get('/', Controller.home)
 
 module.exports = router

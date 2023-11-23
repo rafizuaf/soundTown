@@ -2,11 +2,6 @@ const express = require('express')
 const router = express.Router()
 const { Controller } = require('../controllers/controller')
 const path = require("path")
-
-
-
-
-
 const multer = require('multer')
 const UserController = require('../controllers/userController')
 const storage = multer.diskStorage({
@@ -38,8 +33,8 @@ router.use(function(req, res, next){
 })
 // untuk logout
 router.use("/users", require("./users"))
+router.use("/artists", require("./artists"))
 
-router.get('/navbar', Controller.navbar)
 router.get('/', Controller.home)
 
 module.exports = router

@@ -2,7 +2,7 @@
 const { Artist, Genre, Song, User, GenreSong} = require('../models')
 
 class Controller {
-//     // FORM UNTUK REGISTER USER
+// FORM UNTUK REGISTER USER
     static async userRegisterForm(req, res) {
         try {
             res.render('register')
@@ -11,47 +11,41 @@ class Controller {
         }
     }
 
-//     // HOME
+// HOME
     static async home(req, res) {
         try {
-
             let query = req.query.title
             let id = req.session.userId
             let data = await Artist.getAllArtists(query)
-            // let data =  await Song.getAllSongGenre()
-            // res.send(data)
-            console.log(req.session.userId);
             res.render('home', {data, id})
         } catch (error) {
             res.send(error.message)
         }
     }
 
-//     // PAGE UNTUK MENAMPILKAN DETAIL USER
+// PAGE UNTUK MENAMPILKAN DETAIL USER
     static async myProfile(req, res) {
         try {
             let id = req.session.userId
             let result = await User.getUserById(+id)
-            // res.send(result)
-            res.render('userProfile', {result, id})
+            res.render('myProfile', {result, id})
         } catch (error) {
             res.send(error.message)
         }
     }
 
-//     // ADD SONG FORM (HANYA UNTUK ARTIST)
+// ADD SONG FORM (HANYA UNTUK ARTIST)
     static async addSongForm(req, res) {
         try {
-            // res.send('add songgg')
             let id = req.session.userId
             let result = await Genre.getAllGenres(+id)
-            // res.send(result)
-            res.render('addSongForm', {result})
+            res.render('addSongForm', {result, id})
         } catch (error) {
             res.send(error.message)
         }
     }
 
+    // FORM EDIT
     static async editSongForm(req, res) {
         try {
             

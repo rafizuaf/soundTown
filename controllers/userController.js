@@ -24,6 +24,7 @@ class UserController {
                 if (isValidPassword) {
                     
                     req.session.userId = user.id
+                    req.session.role = user.role
                     console.log(req.session);
                     res.redirect('/')
                 } else {

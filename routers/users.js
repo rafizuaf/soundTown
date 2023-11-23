@@ -31,12 +31,5 @@ users.post('/login', UserController.postLogin)
 // users.post('/login', Controller.userLoginPost)
 users.get('/:id', Controller.myProfile)
 
-// middleware that is specific to this router
-
-// define the home page route
-users.get('/', (req, res) => {
-    res.send('Birds home page')
-})
-
 
 module.exports = users

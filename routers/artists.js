@@ -1,6 +1,6 @@
-// const { Controller } = require('../controllers/controller')
-// const artists = require('express').Router()
+const { Controller } = require('../controllers/controller')
+const artists = require('express').Router()
 
-// artists.get('/addSong', Controller.addSongForm)
+artists.get('/addSong', Controller.addSongForm)
 
-// module.exports = artists
+module.exports = artists

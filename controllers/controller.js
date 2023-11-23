@@ -1,11 +1,11 @@
 // const { comparePassword } = require('../helper/bcrypt')
-// const { Artist, Genre, Song, User, GenreSong} = require('../models')
+const { Artist, Genre, Song, User, GenreSong} = require('../models')
 
 class Controller {
     // NAVBAR
     static navbar(req, res) {
         try {
-            let id = req.params.id
+            let id = req.session.UserId
             res.render('navbar')
         } catch (error) {
             res.send(error)

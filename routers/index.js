@@ -37,6 +37,8 @@ router.use(function(req, res, next){
     }
 })
 // untuk logout
+router.get('/logout', UserController.logout)
+
 router.use("/users", require("./users"))
 
 router.get('/navbar', Controller.navbar)

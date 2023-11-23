@@ -28,13 +28,37 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
 
-    
+    get joinDate() {
+      return this.createdAt.toISOString().split('T')[0]
+    }    
   }
   User.init({
     username: DataTypes.STRING,
-    password: DataTypes.STRING,
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Password is required!"
+        },
+        notNull: {
+          msg: "Password is required!"
+        }
+      }
+    },
     role: DataTypes.STRING,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Email is required!"
+        },
+        notNull: {
+          msg: "Email is required!"
+        }
+      }
+    },
     profilePicture: DataTypes.TEXT,
     ArtistId: DataTypes.INTEGER
   }, {

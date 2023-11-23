@@ -17,14 +17,15 @@
                 <% artists.Songs.forEach(songs => { %>
                     <div class="bg-white p-8 rounded-lg shadow-md w-80 mx-4">
                         <!-- Album Cover -->
-                        <img src="<%= artists.bandPhoto %>" alt="<%= artists.name %> - <%= songs.title %>"
-                            class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50 hover:scale-105 duration-300">
+                        <a href="<%= songs.videoUrl %>"><img src="<%= artists.bandPhoto %>" alt="<%= artists.name %> - <%= songs.title %>" 
+                            class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50 hover:scale-105 duration-300"></a>
                         <!-- Song Title -->
                         <h2 class="text-xl font-semibold text-center"><%= songs.title %></h2>
                         <!-- Artist Name -->
                         <p class="text-gray-600 text-sm text-center flex justify-center"><a href="/artists/:ArtistId" class="hover:scale-125 duration-300"><%= artists.name %></a></p>
                         <!-- Music Controls -->
                         <div class="mt-6 flex justify-center items-center">
+                            
                             
                             <button class="p-4 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none mx-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

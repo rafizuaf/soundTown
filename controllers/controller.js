@@ -25,12 +25,13 @@ class Controller {
     static async userRegisterPost(req, res) {
         try {
             // console.log(req.body, ">>>>>>>>>>>>>>>>>>>");
+            const {filename} = req.file
             const {username, email, password } = req.body
-            let user = await User.create({username, email, password, role: 'user', profilePicture: filename})
+            await User.create({username, email, password, role: 'user', profilePicture: filename})
             // res.send(user)
             res.redirect('/login')
         } catch (error) {
-            // console.log(error);
+            console.log(error);
             res.send(error)
         }
     }
@@ -103,7 +104,18 @@ class Controller {
     static async addSongForm(req, res) {
         try {
             // res.send('add songgg')
-            res.render('addSongForm')
+            // let id = req.params.id
+            let result = await Genre.getAllGenres()
+            // res.send(result)
+            res.render('addSongForm', {result})
+        } catch (error) {
+            res.send(error.message)
+        }
+    }
+
+    static async editSongForm(req, res) {
+        try {
+            
         } catch (error) {
             res.send(error.message)
         }

@@ -17,6 +17,18 @@ module.exports = (sequelize, DataTypes) => {
       })
       Song.belongsTo(models.Artist)
     }
+
+    static async getAllSongGenre() {
+      try {
+        let result = await Song.findAll({
+          include: sequelize.models.Genre,
+          
+        })
+        return result
+      } catch (error) {
+        throw error
+      }
+    }
   }
   Song.init({
     title: DataTypes.STRING,

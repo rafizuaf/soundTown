@@ -12,7 +12,7 @@ search feature done
 static method or INSTANCE METHOD OR GETTER NOT DONE
 VALIDASI NOT DONE
 crud method done
-HOOKS NOT DONE
+hooks done
 helper done
 PROMISE CHAINING NOT DONE
 

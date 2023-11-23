@@ -23,11 +23,6 @@ users.post('/register', upload.single('profilePicture'), UserController.postRegi
 users.get('/login', UserController.formLogin)
 users.post('/login', UserController.postLogin)
 
-users.get(function (req, res) {
-    console.log('Time:', Date.now());
-    next()
-})
-
 
 // users.get('/register', Controller.userRegisterForm)
 // users.post("/register", upload.single('profilePicture'), Controller.userRegisterPost)
@@ -35,6 +30,13 @@ users.get(function (req, res) {
 // users.get('/login', Controller.userLoginForm)
 // users.post('/login', Controller.userLoginPost)
 // users.get('/users/:id', Controller.myProfile)
+
+// middleware that is specific to this router
+
+// define the home page route
+users.get('/', (req, res) => {
+  res.send('Birds home page')
+})
 
 
 module.exports = users

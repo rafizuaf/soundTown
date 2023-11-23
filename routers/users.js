@@ -23,6 +23,11 @@ users.post('/register', upload.single('profilePicture'), UserController.postRegi
 users.get('/login', UserController.formLogin)
 users.post('/login', UserController.postLogin)
 
+users.get(function (req, res) {
+    console.log('Time:', Date.now());
+    next()
+})
+
 
 // users.get('/register', Controller.userRegisterForm)
 // users.post("/register", upload.single('profilePicture'), Controller.userRegisterPost)

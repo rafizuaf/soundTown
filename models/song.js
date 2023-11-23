@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         throw error
       }
     }
+
   }
   Song.init({
     title: DataTypes.STRING,

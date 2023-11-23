@@ -1,4 +1,5 @@
 'use strict';
+const { Op } = require("sequelize");
 const {
   Model
 } = require('sequelize');
@@ -13,6 +14,29 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Artist.hasOne(models.User)
       Artist.hasMany(models.Song)
+    }
+
+    static async getAllArtists(query) {
+      try {
+        let data;
+        if(query) {
+          data = await Artist.findAll({
+            include: sequelize.models.Song,
+            where: {
+              '$Songs.title$': {
+                [Op.iLike]: `%${query}%`
+              }
+            }
+          })
+        } else {
+          data = await Artist.findAll({
+            include: sequelize.models.Song
+          })
+        }
+        return data
+      } catch (error) {
+        throw error
+      }
     }
   }
   Artist.init({

@@ -24,7 +24,7 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css"> -->
   </head>
 
-  <body class="bg-gray-50" style="">
+  <body class="bg-gray-50">
 
     <div class="min-h-full">
       <nav class="bg-gray-800 w-full">
@@ -35,11 +35,11 @@
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
                   <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                  <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                     aria-current="page">Home</a>
-                  <a href="#"
+                  <a href="/myProfile"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">My
-                    info</a>
+                    Profile</a>
                   <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Employees</a>
                   <a href="#"
@@ -54,6 +54,7 @@
 
                 <div class="relative ml-3">
 
+                  <form role="search" action="/" method="get">
                   <div class="md:block lg:block sm:hidden max-w-md mx-auto">
                     <div
                       class="relative  flex items-center w-full h-8 border border-gray-500 rounded-sm  bg-gray-600 overflow-hidden">
@@ -65,15 +66,15 @@
                         </svg>
                       </div>
 
-                      <input class="bg-gray-600 outline-none text-sm text-gray-300 pr-2" type="text" id="search"
-                        placeholder="Search song.." />
+                      <input class="bg-gray-600 outline-none text-sm text-gray-300 pr-2" name="title" type="search" id="search" value=""
+                        placeholder="Search song..." />
+                      </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="flex">
-                  <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-8"
                     aria-current="page">Logout</a>
-                </div>
+                
       </nav>
     </div>
   </body>

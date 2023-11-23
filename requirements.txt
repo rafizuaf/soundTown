@@ -1,0 +1,24 @@
+schema done
+table users with email password role done
+3 associations type done
+model and migration done
+add column migration done
+seeder done
+
+2 route get and 1 route post done
+ROUTE LOGOUT NOT DONE
+
+search feature done
+static method or INSTANCE METHOD OR GETTER NOT DONE
+VALIDASI NOT DONE
+crud method done
+HOOKS NOT DONE
+helper done
+PROMISE CHAINING NOT DONE
+
+landing page done
+register & login done
+eager loading done
+
+login system done
+MVP done (multer)

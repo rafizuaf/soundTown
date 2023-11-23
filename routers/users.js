@@ -21,10 +21,8 @@ users.get('/register', Controller.userRegisterForm)
 users.post("/register", upload.single('profilePicture'), Controller.userRegisterPost)
 
 users.get('/login', Controller.userLoginForm)
-// <<<<<<< rina
-// users.post('/login', Controller.userLoginPost)
-// =======
-// users.get('/users/:id', Controller.myProfile)
-// >>>>>>> main
+users.post('/login', Controller.userLoginPost)
+users.get('/users/:id', Controller.myProfile)
+
 
 module.exports = users

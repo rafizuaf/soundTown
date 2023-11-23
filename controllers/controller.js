@@ -87,12 +87,23 @@ class Controller {
         }
     }
 
+    // PAGE UNTUK MENAMPILKAN DETAIL USER
     static async myProfile(req, res) {
         try {
             let id = req.params.id
             let result =  await User.getUserById(+id)
             // res.send(result)
             res.render('userProfile', {result})
+        } catch (error) {
+            res.send(error.message)
+        }
+    }
+
+    // ADD SONG FORM (HANYA UNTUK ARTIST)
+    static async addSongForm(req, res) {
+        try {
+            // res.send('add songgg')
+            res.render('addSongForm')
         } catch (error) {
             res.send(error.message)
         }

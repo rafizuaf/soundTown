@@ -15,6 +15,19 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.Artist)
     }
 
+    static async getUserById(id) {
+      try {
+        let result = await User.findOne({
+          where: {
+            id: id
+          }
+        })
+        return result
+      } catch (error) {
+        throw error
+      }
+    }
+
     
   }
   User.init({

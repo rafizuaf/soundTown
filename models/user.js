@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'User',
     hooks: {
       beforeCreate: (opt) => {
+        console.log(opt.password);
         const newPassword = hashPassword(opt.password)
         opt.password = newPassword
       }

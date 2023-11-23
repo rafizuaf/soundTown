@@ -27,9 +27,10 @@ app.use(session({
     }
   }))
 
+
 app.use("/", router);
 app.use(users)
-app.use(artists);
+// app.use(artists);
 
 app.listen(port, () => {
     console.log(`Soundtown listening on port ${port}`);

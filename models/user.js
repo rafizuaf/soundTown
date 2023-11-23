@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.Artist)
     }
 
+    get joinDate() {
+      return this.createdAt.toISOString().split('T')[0]
+  }
+
     static async getUserById(id) {
       try {
         let result = await User.findOne({

@@ -6,11 +6,11 @@ add column migration done
 seeder done
 
 2 route get and 1 route post done
-ROUTE LOGOUT NOT DONE
+route logout odone
 
 search feature done
-static method or INSTANCE METHOD OR GETTER NOT DONE
-VALIDASI NOT DONE
+static method or getter done
+validasi done
 crud method done
 hooks done
 helper done

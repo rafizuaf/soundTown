@@ -39,7 +39,13 @@ class Controller {
         try {
             let id = req.session.userId
             let result = await Genre.getAllGenres(+id)
-            res.render('addSongForm', {result, id})
+            let role = req.session.role
+
+            if(role === 'admin') {
+                res.render('addSongForm', {result, id})
+            } else {
+                res.redirect('/')
+            }
         } catch (error) {
             res.send(error.message)
         }

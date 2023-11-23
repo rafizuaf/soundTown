@@ -18,9 +18,13 @@ class UserController {
             const {email, password} = req.body
             let user = await User.findOne({where: {email}})
             if (user) {
+                
                 const isValidPassword = comparePassword(password, user.password)
-
+                // console.log(isValidPassword, "=====");
                 if (isValidPassword) {
+                    
+                    req.session.userId = user.id
+                    console.log(req.session);
                     res.redirect('/')
                 } else {
                     const error = `invalid username/password`

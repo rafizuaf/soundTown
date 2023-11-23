@@ -5,6 +5,7 @@ const artists = require("./routers/artists");
 const app = express();
 const port = 3005;
 const path = require('path');
+const session = require('express-session')
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
 
@@ -18,8 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 // })
 
 
+app.use(session({
+    secret: 'rahasia dong',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { 
+        secure: false,
+        sameSite: true 
+    }
+}))
 app.use("/", router);
-app.use(users)
 // app.use(artists);
 
 app.listen(port, () => {

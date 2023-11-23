@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage: storage})
+const upload = multer({ storage: storage })
 // const upload = multer({dest: "Images/"})
 
 users.get('/register', UserController.formRegis)
@@ -29,13 +29,13 @@ users.post('/login', UserController.postLogin)
 
 // users.get('/login', Controller.userLoginForm)
 // users.post('/login', Controller.userLoginPost)
-// users.get('/users/:id', Controller.myProfile)
+users.get('/:id', Controller.myProfile)
 
 // middleware that is specific to this router
 
 // define the home page route
 users.get('/', (req, res) => {
-  res.send('Birds home page')
+    res.send('Birds home page')
 })
 
 

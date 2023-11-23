@@ -1,56 +1,121 @@
-<%- include('navbar') %>
+<!doctype html>
+<html>
 
-    <!doctype html>
-    <html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer="" src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+<body>
+    <!-- NAVBAR START -->
+    <nav class="min-h-full">
+        <nav class="bg-gray-800 w-full">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center ">
 
-    <body>
-        <!-- component -->
-        <!-- component -->
-        <div class="bg-gray-100 p-4 flex justify-center items-center h-screen">
-            <% data.forEach(artists => { %>
-                <% artists.Songs.forEach(songs => { %>
-                    <div class="bg-white p-8 rounded-lg shadow-md w-80 mx-4">
-                        <!-- Album Cover -->
-                        <img src="<%= artists.bandPhoto %>" alt="<%= artists.name %> - <%= songs.title %>"
-                            class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50 hover:scale-105 duration-300">
-                        <!-- Song Title -->
-                        <h2 class="text-xl font-semibold text-center"><%= songs.title %></h2>
-                        <!-- Artist Name -->
-                        <p class="text-gray-600 text-sm text-center flex justify-center"><a href="/artists/:ArtistId" class="hover:scale-125 duration-300"><%= artists.name %></a></p>
-                        <!-- Music Controls -->
-                        <div class="mt-6 flex justify-center items-center">
-                            
-                            <button class="p-4 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none mx-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                                </svg>
-                            </button>
-                            
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Home</a>
+                                <a href="/users/<%= id %>"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">My
+                                    Profile</a>
+                                <a href="#"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Employees</a>
+                                <a href="#"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Pricing</a>
+                                <a href="#"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blogs</a>
+                            </div>
                         </div>
-                        <div class="mt-6">
-                            <p><%= songs.genre %></p>
-                            
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6 w-max">
+
+                            <div class="relative ml-3">
+
+                                <form role="search" action="/" method="get">
+                                    <div class="md:block lg:block sm:hidden max-w-md mx-auto">
+                                        <div
+                                            class="relative  flex items-center w-full h-8 border border-gray-500 rounded-sm  bg-gray-600 overflow-hidden">
+                                            <div class="grid place-items-center w-12 bg-gray-600 text-gray-300">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-gray-600"
+                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                                </svg>
+                                            </div>
+
+                                            <input class="bg-gray-600 outline-none text-sm text-gray-300 pr-2"
+                                                name="title" type="search" id="search" value=""
+                                                placeholder="Search song..." />
+                                </form>
+                            </div>
                         </div>
-                        <!-- Progress Bar -->
-                        <!-- <div class="mt-6 bg-gray-200 h-2 rounded-full">
+                    </div>
+                    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-8"
+                        aria-current="page">Logout</a>
+
+        </nav>
+    </nav>
+    <!-- NAVBAR END -->
+    
+    <!-- component -->
+    <!-- component -->
+    <div class="bg-gray-100 p-4 flex justify-center items-center h-screen">
+        <% data.forEach(artists=> { %>
+            <% artists.Songs.forEach(songs=> { %>
+                <div class="bg-white p-8 rounded-lg shadow-md w-80 mx-4">
+                    <!-- Album Cover -->
+                    <img src="<%= artists.bandPhoto %>" alt="<%= artists.name %> - <%= songs.title %>"
+                        class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50 hover:scale-105 duration-300">
+                    <!-- Song Title -->
+                    <h2 class="text-xl font-semibold text-center">
+                        <%= songs.title %>
+                    </h2>
+                    <!-- Artist Name -->
+                    <p class="text-gray-600 text-sm text-center flex justify-center"><a href="/artists/:ArtistId"
+                            class="hover:scale-125 duration-300">
+                            <%= artists.name %>
+                        </a></p>
+                    <!-- Music Controls -->
+                    <div class="mt-6 flex justify-center items-center">
+
+                        <button class="p-4 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none mx-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-6 h-6">
+                                <path
+                                    d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                            </svg>
+                        </button>
+
+                    </div>
+                    <div class="mt-6">
+                        <p>
+                            <%= songs.genre %>
+                        </p>
+
+                    </div>
+                    <!-- Progress Bar -->
+                    <!-- <div class="mt-6 bg-gray-200 h-2 rounded-full">
                             <div class="bg-teal-500 h-2 rounded-full w-1/2"></div>
                         </div> -->
-                        <!-- Time Information -->
-                        <!-- <div class="flex justify-between mt-2 text-sm text-gray-600">
+                    <!-- Time Information -->
+                    <!-- <div class="flex justify-between mt-2 text-sm text-gray-600">
                             <span>1:57</span>
                             <span>3:53</span>
                         </div> -->
-                    </div>
+                </div>
                 <% }) %>
-            <% }) %>
-            
-        </div>
-    </body>
+                    <% }) %>
 
-    </html>
+    </div>
+</body>
+
+</html>

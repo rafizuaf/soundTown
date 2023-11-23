@@ -1,17 +1,7 @@
 // const { comparePassword } = require('../helper/bcrypt')
-// const { Artist, Genre, Song, User, GenreSong} = require('../models')
+const { Artist, Genre, Song, User, GenreSong} = require('../models')
 
 class Controller {
-    // NAVBAR
-    static navbar(req, res) {
-        try {
-            let id = req.params.id
-            res.render('navbar')
-        } catch (error) {
-            res.send(error)
-        }
-    }
-
 //     // FORM UNTUK REGISTER USER
     static async userRegisterForm(req, res) {
         try {
@@ -24,11 +14,14 @@ class Controller {
 //     // HOME
     static async home(req, res) {
         try {
+
             let query = req.query.title
+            let id = req.session.userId
             let data = await Artist.getAllArtists(query)
             // let data =  await Song.getAllSongGenre()
             // res.send(data)
-            res.render('home', {data})
+            console.log(req.session.userId);
+            res.render('home', {data, id})
         } catch (error) {
             res.send(error.message)
         }
@@ -37,10 +30,10 @@ class Controller {
 //     // PAGE UNTUK MENAMPILKAN DETAIL USER
     static async myProfile(req, res) {
         try {
-            let id = req.params.id
-            let result =  await User.getUserById(+id)
+            let id = req.session.userId
+            let result = await User.getUserById(+id)
             // res.send(result)
-            res.render('userProfile', {result})
+            res.render('userProfile', {result, id})
         } catch (error) {
             res.send(error.message)
         }

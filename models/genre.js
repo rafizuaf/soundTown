@@ -16,6 +16,15 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "GenreId"
       })
     }
+
+    static async getAllGenres() {
+      try {
+        let result =  await Genre.findAll()
+        return result
+      } catch (error) {
+        throw error
+      }
+    }
   }
   Genre.init({
     name: DataTypes.STRING

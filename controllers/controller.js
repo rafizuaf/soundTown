@@ -29,6 +29,7 @@ class Controller {
         try {
             let id = req.session.userId
             let result = await User.getUserById(+id)
+            // res.send(result)
             res.render('myProfile', {result, id})
         } catch (error) {
             res.send(error.message)

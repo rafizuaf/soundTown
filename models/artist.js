@@ -21,16 +21,29 @@ module.exports = (sequelize, DataTypes) => {
         let data;
         if(query) {
           data = await Artist.findAll({
-            include: sequelize.models.Song,
+            include: {
+              model: sequelize.models.Song,
+              order: [
+                ['title', 'ASC']
+              ]},
             where: {
               '$Songs.title$': {
                 [Op.iLike]: `%${query}%`
               }
-            }
+            },
+            
+
           })
         } else {
           data = await Artist.findAll({
-            include: sequelize.models.Song
+            include: {model:
+              sequelize.models.Song,
+              order: [
+                ['title', 'ASC']
+              ]},
+            // order: [
+            //   ['$Songs.title$', 'ASC']
+            // ]
           })
         }
         return data
@@ -38,6 +51,30 @@ module.exports = (sequelize, DataTypes) => {
         throw error
       }
     }
+
+    // static async showDetail(id) {
+    //   try {
+    //     let data = await Artist.findOne({
+    //       where: {
+    //         id: 2
+    //       },
+    //       include: {
+    //         model:sequelize.models.Song
+    //       }
+    //       // [
+    //       //   {
+    //       //     model: sequelize.models.Song,
+    //       //     include: {
+    //       //       model: sequelize.models.Genre
+    //       //     }
+    //       //   }
+    //       // ]
+    //     })
+    //     return data
+    //   } catch (error) {
+    //     throw error
+    //   }
+    // }
   }
   Artist.init({
     name: DataTypes.STRING,

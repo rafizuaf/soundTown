@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-8"
+                    <a href="/logout" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium ml-8"
                         aria-current="page">Logout</a>
 
         </nav>
@@ -122,6 +122,9 @@
                                     </li>
 
                                     <li class=" items-center py-3">
+                                    <a href="/users/<%= result.id %>/edit"><button class="px-3 md:px-4 py-1 md:py-2 bg-sky-600 border border-sky-600 text-white rounded-lg hover:bg-sky-700"><i class="fa-solid fa-arrow-right-to-bracket"></i>Edit</button></a> 
+                                    <a href="/users/<%= result.id %>/delete"><button class="px-3 md:px-4 py-1 md:py-2 bg-red-600 border border-red-600 text-white rounded-lg hover:bg-red-700"><i class="fa-solid fa-arrow-right-to-bracket"></i>Delete</button></a> 
+
                                         <!-- <span>Full-time</span><br />
                                         <span class="ml-auto">Human Resources</span>
                                         <span class="ml-auto">North America</span>
@@ -130,6 +133,7 @@
                                 </ul>
                             </div>
                         </div>
+                        <!-- component -->
                         <!-- Right Side -->
                         <div class="w-full mx-2   md:block lg:block md:-mt-24 sm:mt-0">
 

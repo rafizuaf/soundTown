@@ -32,6 +32,22 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
 
+    // static async editUserPost(username, email, role, profilePicture, id) {
+    //   try {
+    //     const {filename} = req.file
+    //     await User.update({
+    //       username, email, role, profilePicture
+    //     },
+    //     {
+    //       where: {
+    //         id: id
+    //       }
+    //     })
+    //   } catch (error) {
+    //     throw error
+    //   }
+    // }
+
     
   }
   User.init({

@@ -30,6 +30,8 @@ users.post('/login', UserController.postLogin)
 // users.get('/login', Controller.userLoginForm)
 // users.post('/login', Controller.userLoginPost)
 users.get('/:id', Controller.myProfile)
+users.get('/:id/delete', Controller.deleteUser)
+
 
 
 module.exports = users

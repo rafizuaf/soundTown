@@ -34,7 +34,11 @@ router.use(function(req, res, next){
 // untuk logout
 router.use("/users", require("./users"))
 router.use("/artists", require("./artists"))
+router.get('/users/:id/edit', Controller.editUserForm)
+router.post('/users/:id/edit', upload.single('profilePicture'), Controller.editUserPost)
+router.get('/likes/:id', Controller.incLike)
 
 router.get('/', Controller.home)
+router.get('/logout', UserController.logout)
 
 module.exports = router

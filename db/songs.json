@@ -1,31 +1,30 @@
 [
-    {
-      "title": "Fix You",
-      "lyric": "When you try your best but you don't succeed...\nLights will guide you home...",
-      "like": 5000,
-      "videoUrl": "https://www.youtube.com/watch?v=JI-o25K6B-E",
-      "genre": "Rock"
-    },
-    {
-      "title": "Rolling in the Deep",
-      "lyric": "We could have had it all...\nRolling in the deep...",
-      "like": 7500,
-      "videoUrl": "https://www.youtube.com/watch?v=rYEDA3JcQqw",
-      "genre": "Pop"
-    },
-    {
-      "title": "Clair de Lune",
-      "lyric": "Instrumental",
-      "like": 3000,
-      "videoUrl": "https://www.youtube.com/watch?v=CvFH_6DNRCY",
-      "genre": "Jazz"
-    },
-    {
-      "title": "Mary on a cross",
-      "lyric": "lirik lagu dari band seram",
-      "like": 6000,
-      "videoUrl": "https://www.youtube.com/watch?v=NmxFxBiCrL4",
-      "genre": "Jazz"
-    }
+  {
+    "title": "Fix You",
+    "lyric": "When you try your best but you don't succeed...\nLights will guide you home...",
+    "like": 5000,
+    "videoUrl": "https://www.youtube.com/watch?v=k3dgYCOs5Ms",
+    "genre": "Rock"
+  },
+  {
+    "title": "Rolling in the Deep",
+    "lyric": "We could have had it all...\nRolling in the deep...",
+    "like": 7500,
+    "videoUrl": "https://www.youtube.com/watch?v=rYEDA3JcQqw",
+    "genre": "Pop"
+  },
+  {
+    "title": "Clair de Lune",
+    "lyric": "Instrumental",
+    "like": 3000,
+    "videoUrl": "https://www.youtube.com/watch?v=WNcsUNKlAKw",
+    "genre": "Jazz"
+  },
+  {
+    "title": "Mary on a cross",
+    "lyric": "lirik lagu dari band seram",
+    "like": 6000,
+    "videoUrl": "https://www.youtube.com/watch?v=NmxFxBiCrL4",
+    "genre": "Jazz"
+  }
 ]
-  

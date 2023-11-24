@@ -25,7 +25,7 @@ class UserController {
                     
                     req.session.userId = user.id
                     req.session.role = user.role
-                    console.log(req.session);
+                    // console.log(req.session);
                     res.redirect('/')
                 } else {
                     const error = `invalid username/password`
@@ -42,24 +42,40 @@ class UserController {
 
     static async formRegis(req, res) {
         try {
-            res.render('register')
+            if (req.session.userId) {
+                res.redirect('/')
+            } else {
+                res.render('register')
+            }
         } catch (error) {
+            console.log(error);
             res.send(error)
         }
     }
 
     static async postRegis(req, res) {
         try {
-            console.log(req.body);
+            // console.log(req.body);
             const {filename} = req.file
             const {username, email, password} = req.body
             await User.create({username, email, password, role: 'admin', profilePicture: filename})
+            
             res.redirect('/login')
         } catch (error) {
             console.log(error);
             res.send(error)
         }
     }
+
+    static async logout(req, res) {
+        try {
+            req.session.destroy()
+            res.redirect('/login')
+        } catch (error) {
+            res.send(error)
+        }
+    }
+
 }
 
 module.exports = UserController
